@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1524529779 source:c:\users\a\desktop\pri\mateusz_kiljan_zadanie_1.2\grafy_windows\main.cpp
+	<iostream>
+	"Graph.h"
+
+1524529444 source:c:\users\a\desktop\pri\mateusz_kiljan_zadanie_1.2\grafy_windows\src\graph.cpp
+
+1524529998 c:\users\a\desktop\pri\mateusz_kiljan_zadanie_1.2\grafy_windows\include\graph.h
+
