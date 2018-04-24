@@ -78,7 +78,7 @@ void Interface::AskVertNumb()
             std::cout << "Niepoprawne dane, spróbuj wpisaæ jeszcze raz  ";
         }
 
-    return true;
+    return true ;
  }
  bool Interface::GetSNum()
  {  int i;
