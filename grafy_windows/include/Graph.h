@@ -1,22 +1,23 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-template < typename T>
+template < class T, int N>
 class Graph
 {
-    int inc_mat[2][2];      //incidential matrix
-    T vertex_val[2];        //each vertex value
+    int inc_mat[N][N];      //incidential matrix
+    T vertex_val[N];        //each vertex value
     //int vertex_am = N;      //amount of vertexes
-    bool vertex_check[2];   //if a vertex was checked by DFS algorythm
-    int som=6;
+    bool vertex_check[N];   //if a vertex was checked by DFS algorythm
     public:
-        Graph(inc_mat=0);
-        virtual ~Graph();
 
+        bool VerAdd(T vertex_val[N],int inc_mat[N][N],int vertex_am);
+        bool IncMatDis(int inc_mat);
+        bool ifGraphChecked(bool vertex_check);
+        bool DisplayVer()
 
-        bool ver_add(T vertex_val[2],int inc_mat[2][2],int vertex_am);
-        bool inc_mat_dis(int inc_mat);
-        bool if_graph_checked(bool vertex_check);
+        {
+            std::cout<<N;
+        }
 
     protected:
 
