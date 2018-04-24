@@ -7,16 +7,17 @@
 
 1524529998 c:\users\a\desktop\pri\mateusz_kiljan_zadanie_1.2\grafy_windows\include\graph.h
 
-1524573909 source:c:\users\lenovo\desktop\graf_projekt\grafy_windows\main.cpp
+1524586976 source:c:\users\lenovo\desktop\graf_projekt\grafy_windows\main.cpp
 	<iostream>
 	"Graph.h"
 	"Interface.h"
 
-1524577029 c:\users\lenovo\desktop\graf_projekt\grafy_windows\include\graph.h
+1524591520 c:\users\lenovo\desktop\graf_projekt\grafy_windows\include\graph.h
+	<limits.h>
 
 1524550404 source:c:\users\lenovo\desktop\graf_projekt\grafy_windows\src\graph.cpp
 
-1524574100 source:c:\users\lenovo\desktop\graf_projekt\grafy_windows\src\interface.cpp
+1524577825 source:c:\users\lenovo\desktop\graf_projekt\grafy_windows\src\interface.cpp
 	"Interface.h"
 
 1524574534 c:\users\lenovo\desktop\graf_projekt\grafy_windows\include\interface.h
