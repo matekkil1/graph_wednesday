@@ -19,9 +19,27 @@ int main()
   interface->GoInterface();
   int n= interface->ver_am;
   int  m=interface->edg_am;
-  Graph <int> graph;
-  //graph.WhatToDo(n,m);
-  graph.VerAdd(n);
-  graph.DisplayVer(n);
+  switch (interface->data_type)
+    case 1:
+        Graph <int> graph1(n,m);
+        break;
+    case 1:
+        Graph <int> graph2(n,m);
+        break;
+    case 1:
+        Graph <int> graph3(n,m);
+        break;
+    case 1:
+        Graph <int> graph4(n,m);
+        break;
+    case 1:
+        Graph <int> graph5(n,m);
+        break;
+
+
+  Graph <int> graph(n,m);
+  graph.WhatToDo();
+  //graph.VerAdd();
+  //graph.DisplayVer();
     return 0;
 }
