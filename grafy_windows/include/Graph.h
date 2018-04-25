@@ -6,17 +6,16 @@
 
 template < class T, int N, int M> // N-number of vertexes, M-number of edges
 class Graph
-{   //int DFS_startver;
+{
     int inc_mat[N][M] ={};      //incidential matrix with elements equal zero
-    T vertex_val[N];        //each vertex value
-   // bool vertex_check[N];   //if a vertex was checked by DFS algorythm
+    T vertex_val[N] ={};        //each vertex value
     bool is_vertex_checked[N]; //if given vertex is checked
     bool consistentgraph;
-    //int dfs_counter;
+    int ver_to_start;
     public:
         bool VerAdd()
         {   for(int i=0;i<N;i++)
-            {
+            {    std::cout<<"Wprowadz wartosc dla wierzcholka o numerze "<<i<<": ";
                  T ran;
                  std::cin>> ran;
                  vertex_val[i]=ran;
@@ -26,13 +25,8 @@ class Graph
 
         bool EdgeAdd()
         {int a,b;
-        /* for(int c=0;c<M;c++)
-         {
-             inc_mat[c][c]=1;
-         }
-            */
             for(int j=0;j<M;j++)
-            {   std::cout<<"Wprowadz krawedzie grafu[graf skierowany z lewego wierzcholka do prawego]"<<std::endl;
+            {   std::cout<<"Wprowadz krawedzie grafu skierowanego [A->B]"<<std::endl;
                 std:: cout<<"Podaj wierzcholki dla ";
                 std::cout<<j;
                 std::cout<<"-ej krawedzi: ";
@@ -43,13 +37,13 @@ class Graph
                     {
                         std::cin.clear();
                         std::cin.ignore(INT_MAX, '\n');
-                        std::cout << "Niepoprawne dane, spróbuj wpisaæ jeszcze raz  ";
+                        std::cout << "Niepoprawne dane, spróbuj wpisac jeszcze raz  ";
                     }
                 while (!(std::cin >> b))
                     {
                         std::cin.clear();
                         std::cin.ignore(INT_MAX, '\n');
-                        std::cout << "Niepoprawne dane, spróbuj wpisaæ jeszcze raz  ";
+                        std::cout << "Niepoprawne dane, spróbuj wpisac jeszcze raz  ";
                     }
 
                 std::cout<<"Niepoprawnie wprowadzone wierzcholki, sproboj jeszcze raz: "<<std::endl ;
@@ -64,7 +58,8 @@ class Graph
 
 
         bool IncMatDis()
-        { std::cout << "   ";
+        { std::cout<< " Macierz incydencji dla grafu"<<std::endl;
+          std::cout << "   ";
           for(int i = 0; i < M; i++) std::cout << std::setw(3) << i;
           std::cout << std::endl << std::endl;
           for(int i = 0; i < N; i++)
@@ -87,29 +82,29 @@ class Graph
         }
 
 
-        void AllVertAlig()
+       /* void AllVertAlig()
         {   bool aligned[N];
             for(int i = 0; i < N; i++)
           {
             for(int j = 0; j < M; j++) if(inc_mat[i][j]==1) aligned[N]==true ;
             if(aligned[N]==true) is_vertex_checked[N]==true;
           }
-        }
+        } */
 
-        bool IfGrapgConsistent()
+       /* bool IfGrapgConsistent()
         {
             for(int i=0;i<N;i++)
             {
                 if(is_vertex_checked[i]==0) return false;
             }
             return true;
-        }
+        } */
 
         void DFS(int v)     //recursive
         {
         int i,j;
 
-        is_vertex_checked[v] = true;     // mark checked vertex
+        is_vertex_checked[v] = true;     // marks checked vertex
         std::cout <<"Wartosc wierzcholka "<< v<<" wynosi: "<<vertex_val[v]<<std::endl;  // prints value of checked vertex
 
         for(i = 0; i < M; i++)
@@ -121,6 +116,24 @@ class Graph
                 break;
             }
         }
+
+
+        bool WhatToDo(int a)
+        {
+
+                    VerAdd();
+                    EdgeAdd();
+                    DisplayVer();
+                    IncMatDis();
+
+
+                    std::cout<<"Podaj wierzcholek od ktorego chcesz zaczac algorytm";
+                    std::cin>>ver_to_start;
+                    DFS(ver_to_start);
+
+            }
+
+
 
 
 

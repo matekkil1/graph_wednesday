@@ -16,14 +16,14 @@ Interface::~Interface()
 
 void Interface::DisplayFirstMenu()
 {
-    cout << "1. Stworz graf"<<endl <<"2. Wczytaj graf z pliku"<<endl<<"3. Koniec";
+    cout << "1. Stworz graf"<<endl <<"2. Testy jednostkowe"<<endl<<"3. Koniec";
 
 }
 
 void Interface::DisplayMenuToCreateGraph()
 {
 
-    cout<<"Wybierz typ danych jakie ma reprezentowac graf";
+    cout<<"Wybierz typ danych jakie ma reprezentowac graf"<<std::endl;
     cout<<"1. Dane tekstowe"<<endl<<"2 .Dane liczbowe calkowite"<<endl<<"3. Dane liczbowe wymierne"<<endl<<"4. Dane znakowe"<<endl<<"5. Wartosci logiczne(prawda/falsz)"<<endl;
 }
 
@@ -39,7 +39,7 @@ void Interface::AskVertNumb()
 
  void Interface::AskVertVal()
  {
-     cout<<"Wprowadz wartosc dla wierzcho³ka o numerze: ";
+     cout<<"Wprowadz wartosc dla wierzcholka o numerze: ";
  }
 
  bool Interface::GoInterface()
@@ -50,7 +50,13 @@ void Interface::AskVertNumb()
     {
     case 1:
     system("cls");
+    std::cout<<first_menu_choice;
     DisplayMenuToCreateGraph();
+    GetDataType();
+    system("cls");
+    GetVertAm();
+    GetEdAm();
+
         break;
     case 2:
         system("cls");
@@ -91,3 +97,40 @@ void Interface::AskVertNumb()
     return true;
 
  }
+
+ bool Interface::GetDataType()
+ {   int i;
+    while (!(std::cin >> data_type))
+        {
+            std::cin.clear();
+            std::cin.ignore(INT_MAX, '\n');
+            std::cout << "Niepoprawne dane, spróbuj wpisaæ jeszcze raz  ";
+        }
+
+
+ }
+
+ void Interface::DisplayGraphOpt()
+        {
+            std::cout<<"1. Wyswietl informacje"<<std::endl<<"2. Dodaj wartosci wierzcholkow"<<std::endl<<"3. Dodaj krawedzie"<<std::endl<<"4. Algorytm DFS"<<std::endl;
+        }
+
+void Interface::GetVertAm()
+{   std::cout<<"Podaj liczbe wierzcholkow dla grafu: ";
+    while (!(std::cin >>ver_am ))
+        {
+            std::cin.clear();
+            std::cin.ignore(INT_MAX, '\n');
+            std::cout << "Niepoprawne dane, spróbuj wpisaæ jeszcze raz  ";
+        }
+}
+
+void Interface::GetEdAm()
+{   std::cout<<"Podaj liczbe krawedzi dla grafu: ";
+    while (!(std::cin >> edg_am))
+        {
+            std::cin.clear();
+            std::cin.ignore(INT_MAX, '\n');
+            std::cout << "Niepoprawne dane, spróbuj wpisaæ jeszcze raz  ";
+        }
+}

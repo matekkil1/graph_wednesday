@@ -11,6 +11,10 @@ class Interface
     int vertnum;
     int first_menu_choice = 0;
     int graph_menu_choice = 0;
+    int data_type=0;
+    int graph_opt=0;
+    int ver_am;
+    int edg_am;
 
         Interface();
         virtual ~Interface();
@@ -22,6 +26,11 @@ class Interface
         bool GoInterface();
         bool GetFNum();
         bool GetSNum();
+        bool GetDataType();
+        void DisplayGraphOpt();
+        void GetGraphOpt();
+        void GetVertAm();
+        void GetEdAm();
 
     protected:
 
