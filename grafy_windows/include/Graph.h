@@ -1,6 +1,7 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 #include <limits.h>
+#include <iostream>
 #include <iomanip>
 #include <stack>
 

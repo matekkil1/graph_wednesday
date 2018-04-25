@@ -24,7 +24,7 @@ void Interface::DisplayMenuToCreateGraph()
 {
 
     cout<<"Wybierz typ danych jakie ma reprezentowac graf"<<std::endl;
-    cout<<"1. Dane tekstowe"<<endl<<"2 .Dane liczbowe calkowite"<<endl<<"3. Dane liczbowe wymierne"<<endl<<"4. Dane znakowe"<<endl<<"5. Wartosci logiczne(prawda/falsz)"<<endl;
+    cout<<"1. Dane tekstowe"<<endl<<"2 .Dane liczbowe calkowite"<<endl<<"3. Dane liczbowe wymierne"<<endl<<"4. Dane znakowe"<<endl;
 }
 
 void Interface::AskVertNumb()
@@ -123,4 +123,10 @@ void Interface::GetEdAm()
             std::cin.ignore(INT_MAX, '\n');
             std::cout << "Niepoprawne dane, spróbuj wpisaæ jeszcze raz  ";
         }
+}
+void Interface::AutomiticTests()
+{
+    Tests *test = new Tests;
+    test->RunAll();
+    delete test;
 }

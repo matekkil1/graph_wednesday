@@ -4,6 +4,7 @@
 #include <string>
 #include <sstream>
 #include <limits.h>
+#include "Tests.h"
 using namespace std;
 
 class Interface
@@ -15,6 +16,7 @@ class Interface
     int graph_opt=0;
     int ver_am;
     int edg_am;
+    int autotest;
 
         Interface();
         virtual ~Interface();
@@ -31,6 +33,7 @@ class Interface
         void GetGraphOpt();
         void GetVertAm();
         void GetEdAm();
+        void AutomiticTests();
 
     protected:
 
