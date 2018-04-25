@@ -49,31 +49,21 @@ void Interface::AskVertNumb()
     switch (first_menu_choice)
     {
     case 1:
-    system("cls");
-    std::cout<<first_menu_choice;
-    DisplayMenuToCreateGraph();
-    GetDataType();
-    system("cls");
-    GetVertAm();
-    GetEdAm();
-
+        system("cls");
+        std::cout<<first_menu_choice;
+        DisplayMenuToCreateGraph();
+        GetDataType();
+        system("cls");
+        GetVertAm();
+        GetEdAm();
         break;
+
     case 2:
         system("cls");
 
         break;
 
-    case 3:
-        system("cls");
-
-        break;
-
-    case 4:
-        system("cls");
-
-        break;
-
-    }
+        }
  }
  bool Interface::GetFNum()
  {  int i;
@@ -116,7 +106,7 @@ void Interface::AskVertNumb()
         }
 
 void Interface::GetVertAm()
-{   std::cout<<"Podaj liczbe wierzcholkow dla grafu: ";
+{   std::cout<<"Podaj liczbe wierzcholkow dla grafu: 1";
     while (!(std::cin >>ver_am ))
         {
             std::cin.clear();

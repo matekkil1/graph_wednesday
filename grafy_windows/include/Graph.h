@@ -4,29 +4,37 @@
 #include <iomanip>
 #include <stack>
 
-template < class T, int N, int M> // N-number of vertexes, M-number of edges
+template < class T> // N-number of vertexes, M-number of edges
 class Graph
-{
-    int inc_mat[N][M] ={};      //incidential matrix with elements equal zero
-    T vertex_val[N] ={};        //each vertex value
-    bool is_vertex_checked[N]; //if given vertex is checked
+{   int N;
+    int M;
+    T * vertex_val;
+    int ** inc_mat; // = new int * [N];
+   // int ** inc_mat[N][M] ={};      //incidential matrix with elements equal zero
+   // T vertex_val[N] ={};        //each vertex value
+    bool * is_vertex_checked;// = new bool[N]; //if given vertex is checked
     bool consistentgraph;
     int ver_to_start;
     public:
-        bool VerAdd()
-        {   for(int i=0;i<N;i++)
+        bool VerAdd(int F)
+        {
+            T * vertex_val = new T[F];
+            for(int i=0;i<F;i++)
             {    std::cout<<"Wprowadz wartosc dla wierzcholka o numerze "<<i<<": ";
                  T ran;
                  std::cin>> ran;
-                 vertex_val[i]=ran;
+                vertex_val[i] = ran;
+                 //*vertex_val[i]=ran;
             }
             return true;
         }
 
-        bool EdgeAdd()
+        bool EdgeAdd(int G, int F)
         {int a,b;
-            for(int j=0;j<M;j++)
-            {   std::cout<<"Wprowadz krawedzie grafu skierowanego [A->B]"<<std::endl;
+         int ** inc_mat = new int * [F];
+            for(int j=0;j<G;j++)
+            {
+                std::cout<<"Wprowadz krawedzie grafu skierowanego [A->B]"<<std::endl;
                 std:: cout<<"Podaj wierzcholki dla ";
                 std::cout<<j;
                 std::cout<<"-ej krawedzi: ";
@@ -47,7 +55,7 @@ class Graph
                     }
 
                 std::cout<<"Niepoprawnie wprowadzone wierzcholki, sproboj jeszcze raz: "<<std::endl ;
-                }while ((a==b) || (a<0) || (b<0) || (a>N) || (b>N) ) ;
+                }while ((a==b) || (a<0) || (b<0) || (a>F) || (b>F) ) ;
 
                 inc_mat[b][j]=-1;
                 inc_mat[a][j]=1;
@@ -72,11 +80,11 @@ class Graph
         }
 
         bool IsGraphChecked();
-        bool DisplayVer()
+        bool DisplayVer(int G)
         {
-            for(int i=0;i<N;i++)
+            for(int i=0;i<G;i++)
             {
-                std::cout<<"Dla wierzcholka o indeksie "<<i<<" wartosc wynosi: "<< vertex_val[i]<<std::endl;
+                std::cout<<"Dla wierzcholka o indeksie "<<i<<" wartosc wynosi: "<<  vertex_val[i]<<std::endl;
             }
 
         }
@@ -118,22 +126,23 @@ class Graph
         }
 
 
-        bool WhatToDo(int a)
+        bool WhatToDo(int G, int F)
         {
 
-                    VerAdd();
-                    EdgeAdd();
+                    //DisplayVer();
+                   // IncMatDis();
+                    VerAdd(F);
                     DisplayVer();
-                    IncMatDis();
-
-
-                    std::cout<<"Podaj wierzcholek od ktorego chcesz zaczac algorytm";
+                    system("pause");
+                    system("cls");
+                    EdgeAdd(G,F);
+                    std::cout<<"Podaj wierzcholek od ktorego chcesz zaczac algorytm" ;
                     std::cin>>ver_to_start;
                     DFS(ver_to_start);
 
-            }
 
 
+        }
 
 
 

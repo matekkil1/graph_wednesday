@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    Graph < int,5,6> graph;
+
     /*graph.VerAdd();
     graph.EdgeAdd();
     graph.IncMatDis();
@@ -17,6 +17,11 @@ int main()
 
   Interface *interface = new Interface;
   interface->GoInterface();
-  graph.WhatToDo(interface->graph_opt);
+  int n= interface->ver_am;
+  int  m=interface->edg_am;
+  Graph <int> graph;
+  //graph.WhatToDo(n,m);
+  graph.VerAdd(n);
+  graph.DisplayVer(n);
     return 0;
 }
