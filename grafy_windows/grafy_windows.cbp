@@ -19,11 +19,14 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++14" />
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Graph.h" />
+		<Unit filename="include/Interface.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Graph.cpp" />
+		<Unit filename="src/Interface.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

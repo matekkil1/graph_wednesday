@@ -6,11 +6,13 @@
 
 template < class T, int N, int M> // N-number of vertexes, M-number of edges
 class Graph
-{
+{   //int DFS_startver;
     int inc_mat[N][M] ={};      //incidential matrix with elements equal zero
     T vertex_val[N];        //each vertex value
-    bool vertex_check[N];   //if a vertex was checked by DFS algorythm
+   // bool vertex_check[N];   //if a vertex was checked by DFS algorythm
     bool is_vertex_checked[N]; //if given vertex is checked
+    bool consistentgraph;
+    //int dfs_counter;
     public:
         bool VerAdd()
         {   for(int i=0;i<N;i++)
@@ -24,11 +26,11 @@ class Graph
 
         bool EdgeAdd()
         {int a,b;
-         for(int c=0;c<M;c++)
+        /* for(int c=0;c<M;c++)
          {
              inc_mat[c][c]=1;
          }
-
+            */
             for(int j=0;j<M;j++)
             {   std::cout<<"Wprowadz krawedzie grafu[graf skierowany z lewego wierzcholka do prawego]"<<std::endl;
                 std:: cout<<"Podaj wierzcholki dla ";
@@ -53,8 +55,8 @@ class Graph
                 std::cout<<"Niepoprawnie wprowadzone wierzcholki, sproboj jeszcze raz: "<<std::endl ;
                 }while ((a==b) || (a<0) || (b<0) || (a>N) || (b>N) ) ;
 
-                inc_mat[b][a]=1;
-                inc_mat[a][b]=-1;
+                inc_mat[b][j]=-1;
+                inc_mat[a][j]=1;
                 system("cls");
             }
             return true;
@@ -74,7 +76,7 @@ class Graph
         return true;
         }
 
-        bool isGraphChecked();
+        bool IsGraphChecked();
         bool DisplayVer()
         {
             for(int i=0;i<N;i++)
@@ -84,34 +86,41 @@ class Graph
 
         }
 
-       /* bool DSF()
-        {   int currver=0; //index of current vertex
-            bool v_is_checked; //is current vertex checked
-            int ver_to_start = 0; // index of the vertex to start searching
-            if(inc_mat[][ver_to_start])
-        while()
 
+        void AllVertAlig()
+        {   bool aligned[N];
+            for(int i = 0; i < N; i++)
+          {
+            for(int j = 0; j < M; j++) if(inc_mat[i][j]==1) aligned[N]==true ;
+            if(aligned[N]==true) is_vertex_checked[N]==true;
+          }
+        }
 
-        } */
+        bool IfGrapgConsistent()
+        {
+            for(int i=0;i<N;i++)
+            {
+                if(is_vertex_checked[i]==0) return false;
+            }
+            return true;
+        }
 
-       /* void DFS(int v)
+        void DFS(int v)     //recursive
         {
         int i,j;
 
-        visited[v] = true;     // Zaznaczamy wêze³ jako odwiedzony
-        cout << setw(3) << v;  // Przetwarzamy wêze³ (wypisujemy jego numer)
+        is_vertex_checked[v] = true;     // mark checked vertex
+        std::cout <<"Wartosc wierzcholka "<< v<<" wynosi: "<<vertex_val[v]<<std::endl;  // prints value of checked vertex
 
-            // Rekurencyjnie odwiedzamy nieodwiedzonych s¹siadów
-
-        for(i = 0; i < m; i++)
-        if(A[v][i] == 1)
-            for(j = 0; j < n; j++)
-            if(A[j][i] == -1)
+        for(i = 0; i < M; i++)
+        if(inc_mat[v][i] == 1)
+            for(j = 0; j < N; j++)
+            if(inc_mat[j][i] == -1)
             {
-                if(!visited[j]) DFS(j);
+                if(!is_vertex_checked[j]) DFS(j);       // checks unchecked vertexes
                 break;
             }
-        }*/
+        }
 
 
 
