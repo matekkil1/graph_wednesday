@@ -16,33 +16,33 @@ Interface::~Interface()
 
 void Interface::DisplayFirstMenu()
 {
-    cout << "1. Stworz graf"<<endl <<"2. Testy jednostkowe"<<endl<<"3. Koniec";
+    std::cout << "1. Stworz graf"<<std::endl <<"2. Testy jednostkowe"<<std::endl<<"3. Koniec"<<std::endl;
 
 }
 
 void Interface::DisplayMenuToCreateGraph()
 {
 
-    cout<<"Wybierz typ danych jakie ma reprezentowac graf"<<std::endl;
-    cout<<"1. Dane tekstowe"<<endl<<"2 .Dane liczbowe calkowite"<<endl<<"3. Dane liczbowe wymierne"<<endl<<"4. Dane znakowe"<<endl;
+    std::cout<<"Wybierz typ danych jakie ma reprezentowac graf "<<std::endl;
+    std::cout<<"1. Dane tekstowe"<<std::endl<<"2 .Dane liczbowe calkowite"<<std::endl<<"3. Dane liczbowe wymierne"<<std::endl<<"4. Dane znakowe"<<endl;
 }
 
 void Interface::AskVertNumb()
 {
-    cout<<"Ile wierzcholkow ma miec graf ?";
+    std::cout<<"Ile wierzcholkow ma miec graf ?";
 }
 
  void Interface::GetVertNumb()
  {
-     cin>>vertnum;
+    std::cin>>vertnum;
  }
 
  void Interface::AskVertVal()
  {
-     cout<<"Wprowadz wartosc dla wierzcholka o numerze: ";
+    std::cout<<"Wprowadz wartosc dla wierzcholka o numerze: ";
  }
 
- bool Interface::GoInterface()
+ void Interface::GoInterface()
  {
     DisplayFirstMenu();
     GetFNum();
@@ -50,78 +50,69 @@ void Interface::AskVertNumb()
     {
     case 1:
         system("cls");
-        std::cout<<first_menu_choice;
         DisplayMenuToCreateGraph();
         GetDataType();
         system("cls");
         GetVertAm();
         GetEdAm();
+        system("cls");
         break;
 
     case 2:
         system("cls");
-
+        AutomiticTests();
         break;
 
         }
  }
- bool Interface::GetFNum()
- {  int i;
-     while (!(std::cin >> first_menu_choice))
+ void Interface::GetFNum()
+ {
+    while (!(std::cin >> first_menu_choice))
         {
             std::cin.clear();
             std::cin.ignore(INT_MAX, '\n');
-            std::cout << "Niepoprawne dane, spróbuj wpisaæ jeszcze raz  ";
+            std::cout << "Niepoprawne dane, sprobuj wpisac jeszcze raz  ";
         }
-
-    return true ;
  }
- bool Interface::GetSNum()
- {  int i;
-     while (!(std::cin >> graph_menu_choice))
+ void Interface::GetSNum()
+ {
+    while (!(std::cin >> graph_menu_choice))
         {
             std::cin.clear();
             std::cin.ignore(INT_MAX, '\n');
-            std::cout << "Niepoprawne dane, spróbuj wpisaæ jeszcze raz  ";
+            std::cout << "Niepoprawne dane, sprobuj wpisac jeszcze raz  ";
         }
-    return true;
-
  }
 
- bool Interface::GetDataType()
- {   int i;
+ void Interface::GetDataType()
+ {
     while (!(std::cin >> data_type))
         {
             std::cin.clear();
             std::cin.ignore(INT_MAX, '\n');
-            std::cout << "Niepoprawne dane, spróbuj wpisaæ jeszcze raz  ";
+            std::cout << "Niepoprawne dane, sprobuj wpisac jeszcze raz  ";
         }
 
 
  }
 
- void Interface::DisplayGraphOpt()
-        {
-            std::cout<<"1. Wyswietl informacje"<<std::endl<<"2. Dodaj wartosci wierzcholkow"<<std::endl<<"3. Dodaj krawedzie"<<std::endl<<"4. Algorytm DFS"<<std::endl;
-        }
-
 void Interface::GetVertAm()
-{   std::cout<<"Podaj liczbe wierzcholkow dla grafu: 1";
+{   std::cout<<"Podaj liczbe wierzcholkow dla grafu ";
     while (!(std::cin >>ver_am ))
         {
             std::cin.clear();
             std::cin.ignore(INT_MAX, '\n');
-            std::cout << "Niepoprawne dane, spróbuj wpisaæ jeszcze raz  ";
+            std::cout << "Niepoprawne dane, sprobuj wpisac jeszcze raz  ";
         }
 }
 
 void Interface::GetEdAm()
-{   std::cout<<"Podaj liczbe krawedzi dla grafu: ";
+{   std::cout<<"Podaj liczbe krawedzi dla grafu ";
     while (!(std::cin >> edg_am))
         {
             std::cin.clear();
             std::cin.ignore(INT_MAX, '\n');
-            std::cout << "Niepoprawne dane, spróbuj wpisaæ jeszcze raz  ";
+            std::cout << "Niepoprawne dane, sprobuj wpisac jeszcze raz  ";
         }
 }
 void Interface::AutomiticTests()

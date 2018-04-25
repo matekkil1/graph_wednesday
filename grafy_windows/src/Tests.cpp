@@ -161,7 +161,7 @@ void Tests::Test08()
     testgraph->inc_mat[3][3]=-1;
     testgraph->inc_mat[4][0]=1;
     testgraph->IncMatDis();
-    std::cout<<"Macierz incydencji dla przykladu 4";
+    std::cout<<"Macierz incydencji dla przykladu 4 - jesli taka sama to OK";
     delete testgraph;
 
 }

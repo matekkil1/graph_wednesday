@@ -6,9 +6,7 @@ using namespace std;
 int main()
 {
   Interface *interface = new Interface;
-  interface->AutomiticTests();
   interface->GoInterface();
-
   int n= interface->ver_am;
   int  m=interface->edg_am;
   switch (interface->data_type)
@@ -30,9 +28,6 @@ int main()
         graphc.WhatToDo();
         break;}
    }
-
-
-  //graph.VerAdd();
-  //graph.DisplayVer();
+   delete interface;
     return 0;
 }

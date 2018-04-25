@@ -7,12 +7,12 @@
 
 1524529998 c:\users\a\desktop\pri\mateusz_kiljan_zadanie_1.2\grafy_windows\include\graph.h
 
-1524684029 source:c:\users\lenovo\desktop\graf_projekt\grafy_windows\main.cpp
+1524690255 source:c:\users\lenovo\desktop\graf_projekt\grafy_windows\main.cpp
 	<iostream>
 	"Graph.h"
 	"Interface.h"
 
-1524682558 c:\users\lenovo\desktop\graf_projekt\grafy_windows\include\graph.h
+1524693030 c:\users\lenovo\desktop\graf_projekt\grafy_windows\include\graph.h
 	<limits.h>
 	<iostream>
 	<iomanip>
@@ -20,10 +20,10 @@
 
 1524550404 source:c:\users\lenovo\desktop\graf_projekt\grafy_windows\src\graph.cpp
 
-1524685171 source:c:\users\lenovo\desktop\graf_projekt\grafy_windows\src\interface.cpp
+1524693065 source:c:\users\lenovo\desktop\graf_projekt\grafy_windows\src\interface.cpp
 	"Interface.h"
 
-1524684029 c:\users\lenovo\desktop\graf_projekt\grafy_windows\include\interface.h
+1524692923 c:\users\lenovo\desktop\graf_projekt\grafy_windows\include\interface.h
 	<iostream>
 	<string>
 	<sstream>
@@ -33,6 +33,6 @@
 1524689483 c:\users\lenovo\desktop\graf_projekt\grafy_windows\include\tests.h
 	"Graph.h"
 
-1524685274 source:c:\users\lenovo\desktop\graf_projekt\grafy_windows\src\tests.cpp
+1524689933 source:c:\users\lenovo\desktop\graf_projekt\grafy_windows\src\tests.cpp
 	"Tests.h"
 

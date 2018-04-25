@@ -25,11 +25,10 @@ class Interface
         void AskVertNumb();
         void GetVertNumb();
         void AskVertVal();
-        bool GoInterface();
-        bool GetFNum();
-        bool GetSNum();
-        bool GetDataType();
-        void DisplayGraphOpt();
+        void GoInterface();
+        void GetFNum();
+        void GetSNum();
+        void GetDataType();
         void GetGraphOpt();
         void GetVertAm();
         void GetEdAm();

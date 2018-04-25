@@ -17,8 +17,8 @@ class Graph
     int ver_to_start;
 
         Graph<T>(int n, int m)
-        {   is_vertex_checked = new bool[n]();
-
+        {
+            is_vertex_checked = new bool[n]();
             vertex_val = new T[n]();
             inc_mat = new int *[n]();
             for(int i=0;i<n;i++)
@@ -27,12 +27,11 @@ class Graph
             }
             N=n;
             M=m;
-
         }
 
-
         bool VerAdd()
-        {   for(int i=0;i<N;i++)
+        {
+            for(int i=0;i<N;i++)
             {    std::cout<<"Wprowadz wartosc dla wierzcholka o numerze "<<i<<": ";
                  T ran;
                  std::cin>> ran;
@@ -42,14 +41,14 @@ class Graph
         }
 
         bool EdgeAdd()
-        {int a,b;
+        {
+            int a,b;
             for(int j=0;j<M;j++)
             {
                 std::cout<<"Wprowadz krawedzie grafu skierowanego [A->B]"<<std::endl;
                 std:: cout<<"Podaj wierzcholki dla ";
                 std::cout<<j;
                 std::cout<<"-ej krawedzi: ";
-
 
                 do
                 {while (!(std::cin >> a))
@@ -75,9 +74,8 @@ class Graph
             return true;
         }
 
-
         bool IncMatDis()
-        { std::cout<< " Macierz incydencji dla grafu"<<std::endl;
+        { std::cout<<std::endl<< "Macierz incydencji dla grafu"<<std::endl;
           std::cout << "   ";
           for(int i = 0; i < M; i++) std::cout << std::setw(3) << i;
           std::cout << std::endl << std::endl;
@@ -89,9 +87,7 @@ class Graph
           }
         return true;
         }
-
-        bool IsGraphChecked();
-        bool DisplayVer()
+        void DisplayVer()
         {
             for(int i=0;i<N;i++)
             {
@@ -99,25 +95,6 @@ class Graph
             }
 
         }
-
-
-       /* void AllVertAlig()
-        {   bool aligned[N];
-            for(int i = 0; i < N; i++)
-          {
-            for(int j = 0; j < M; j++) if(inc_mat[i][j]==1) aligned[N]==true ;
-            if(aligned[N]==true) is_vertex_checked[N]==true;
-          }
-        } */
-
-       /* bool IfGrapgConsistent()
-        {
-            for(int i=0;i<N;i++)
-            {
-                if(is_vertex_checked[i]==0) return false;
-            }
-            return true;
-        } */
 
         void DFS(int v)     //recursive
         {
@@ -135,31 +112,17 @@ class Graph
                 break;
             }
         }
-
-
-        bool WhatToDo()
+        void WhatToDo()
         {
-
-                    DisplayVer();
-                    //IncMatDis();
-                    VerAdd();
-                    EdgeAdd();
-                    std::cout<<"Podaj wierzcholek od ktorego chcesz zaczac algorytm" ;
-                    std::cin>>ver_to_start;
-                    DFS(ver_to_start);
-
-
-
+         VerAdd();
+         system("cls");
+         EdgeAdd();
+         std::cout<<"Podaj wierzcholek od ktorego chcesz zaczac algorytm: " ;
+         std::cin>>ver_to_start;
+         std::cout<<"Algorytm DFS dla "<<ver_to_start<<"-ego wierzcholka"<<std::endl;
+         DFS(ver_to_start);
+         IncMatDis();
         }
-
-
-
-
-
-    protected:
-
-    private:
-
 };
 
 #endif // GRAPH_H
