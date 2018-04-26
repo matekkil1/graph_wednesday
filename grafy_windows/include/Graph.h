@@ -16,7 +16,7 @@ class Graph
     bool consistentgraph;
     int ver_to_start;
 
-        Graph<T>(int n, int m)
+        Graph<T>(int n, int m)         // constructor for dynamicly allocated data
         {
             is_vertex_checked = new bool[n]();
             vertex_val = new T[n]();
@@ -69,7 +69,7 @@ class Graph
 
                 inc_mat[b][j]=-1;
                 inc_mat[a][j]=1;
-                system("cls");
+                system("clear");
             }
             return true;
         }
@@ -115,7 +115,7 @@ class Graph
         void WhatToDo()
         {
          VerAdd();
-         system("cls");
+         system("clear");
          EdgeAdd();
          std::cout<<"Podaj wierzcholek od ktorego chcesz zaczac algorytm: " ;
          std::cin>>ver_to_start;

@@ -24,9 +24,11 @@
 		</Compiler>
 		<Unit filename="include/Graph.h" />
 		<Unit filename="include/Interface.h" />
+		<Unit filename="include/Tests.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Graph.cpp" />
 		<Unit filename="src/Interface.cpp" />
+		<Unit filename="src/Tests.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

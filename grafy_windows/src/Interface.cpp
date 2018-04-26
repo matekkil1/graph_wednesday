@@ -49,17 +49,17 @@ void Interface::AskVertNumb()
     switch (first_menu_choice)
     {
     case 1:
-        system("cls");
+        system("clear");
         DisplayMenuToCreateGraph();
         GetDataType();
-        system("cls");
+        system("clear");
         GetVertAm();
         GetEdAm();
-        system("cls");
+        system("clear");
         break;
 
     case 2:
-        system("cls");
+        system("clear");
         AutomiticTests();
         break;
 
